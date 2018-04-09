@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="36866eaa-c35d-4a4d-beed-69b016197e81" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/video_caption_pytorch$prepro_vocab.coverage" NAME="prepro_vocab Coverage Results" MODIFIED="1522768755156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/video_caption_pytorch$foo.coverage" NAME="foo Coverage Results" MODIFIED="1523105597778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/foo" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="125" column="12" lean-forward="false" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="opts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/opts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataloader.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataloader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="685">
+              <caret line="69" column="11" lean-forward="false" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eval.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eval.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="124" column="19" lean-forward="false" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eval_s2vt.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eval_s2vt.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-168">
+                <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train_s2vt.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train_s2vt.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="extract_feat.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extract_feat.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prepro_feats.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prepro_feats.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="58" column="55" lean-forward="false" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>results</find>
+      <find>num_layers</find>
+      <find>S2VTModel</find>
+      <find>squeeze</find>
+      <find>input_dropout_p</find>
+      <find>inceptionv3</find>
+      <find>model</find>
+      <find>input</find>
+      <find>input_size</find>
+      <find>load_pretrained</find>
+      <find>saved_model</find>
+      <find>RandomCrop</find>
+      <find>resize</find>
+      <find>extract_frames</find>
+      <find>scorer</find>
+      <find>epoch</find>
+      <find>learn</find>
+      <find>c3d</find>
+      <find>with_c3d</find>
+      <find>get_seq_length</find>
+      <find>hx</find>
+      <find>n_layers</find>
+      <find>rnn</find>
+      <find>rnn_cell_type</find>
+      <find>rnn_type</find>
+      <find>pretrained_settings</find>
+      <find>C</find>
+      <find>parse_opt</find>
+      <find>feat</find>
+      <find>feats_dir</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/misc/utils.py" />
+        <option value="$PROJECT_DIR$/models/S2VTAttModel.py" />
+        <option value="$PROJECT_DIR$/models/EncoderRNN.py" />
+        <option value="$PROJECT_DIR$/models/DecoderRNN.py" />
+        <option value="$PROJECT_DIR$/models/Attention.py" />
+        <option value="$PROJECT_DIR$/misc/cocoeval.py" />
+        <option value="$PROJECT_DIR$/prepro_vocab.py" />
+        <option value="$PROJECT_DIR$/finetune_cnn.py" />
+        <option value="$PROJECT_DIR$/foo/foo.py" />
+        <option value="$PROJECT_DIR$/models/S2VTModel.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/prepro_feats.py" />
+        <option value="$PROJECT_DIR$/dataloader.py" />
+        <option value="$PROJECT_DIR$/opts.py" />
+        <option value="$USER_HOME$/PycharmProjects/play/foo.py" />
+        <option value="$USER_HOME$/PycharmProjects/play/char_draw.py" />
+        <option value="$PROJECT_DIR$/eval.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-124" />
+    <option name="y" value="-6" />
+    <option name="width" value="1845" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="video-caption.pytorch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="video-caption.pytorch" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Github/video-caption.pytorch" />
+    <property name="SearchEverywhereHistoryKey" value="VideoDataset&#9;null&#9;null" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.foo">
+    <configuration name="foo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/foo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="video-caption.pytorch" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/foo/foo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="prepro_vocab" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="video-caption.pytorch" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prepro_vocab.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.prepro_vocab" />
+      <item index="1" class="java.lang.String" itemvalue="Python.foo" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.foo" />
+        <item index="1" class="java.lang.String" itemvalue="Python.prepro_vocab" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36866eaa-c35d-4a4d-beed-69b016197e81" name="Default" comment="" />
+      <created>1522503263470</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522503263470</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="57" y="-6" width="1863" height="1086" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16125481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24502617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25235602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pretrainedmodels/models/inceptionv4.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pretrainedmodels/__init__.py" />
+    <entry file="file:///usr/lib/python2.7/urllib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pretrainedmodels/datasets/utils.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pretrainedmodels/utils.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torchvision/models/resnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3120">
+          <caret line="132" column="16" lean-forward="false" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pretrainedmodels/datasets/voc.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torchvision/models/densenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torch/utils/model_zoo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-159">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pretrainedmodels/models/torchvision_models.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torchvision/transforms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7992">
+          <caret line="337" column="9" lean-forward="false" selection-start-line="337" selection-start-column="9" selection-end-line="337" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/posixpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prepro_vocab.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="4333" column="33" lean-forward="false" selection-start-line="4333" selection-start-column="33" selection-end-line="4333" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finetune_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1224">
+          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/numpy/core/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1158">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torch/autograd/variable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1152">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/torch/_C/__init__/IntTensorBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="1206" column="8" lean-forward="false" selection-start-line="1206" selection-start-column="8" selection-end-line="1206" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="545" column="40" lean-forward="true" selection-start-line="545" selection-start-column="40" selection-end-line="545" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torch/nn/modules/rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="155" column="26" lean-forward="false" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torch/nn/backends/thnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torch/nn/_functions/rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="292" column="0" lean-forward="false" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/S2VTAttModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/cocoeval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torch/nn/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="50" column="32" lean-forward="false" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foo/foo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torchvision/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torchvision/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1464">
+          <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/python2.7/dist-packages/pretrainedmodels-0.4.1-py2.7.egg!/pretrainedmodels/models/torchvision_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/python2.7/dist-packages/pretrainedmodels-0.4.1-py2.7.egg!/pretrainedmodels/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="89" column="8" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/python2.7/dist-packages/pretrainedmodels-0.4.1-py2.7.egg!/pretrainedmodels/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/S2VTModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="984">
+          <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#12#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/torch/nn/modules/linear.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/python2.7/dist-packages/pretrainedmodels-0.4.1-py2.7.egg!/pretrainedmodels/models/nasnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="562" column="34" lean-forward="true" selection-start-line="562" selection-start-column="34" selection-end-line="562" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/python2.7/dist-packages/pretrainedmodels-0.4.1-py2.7.egg!/pretrainedmodels/models/inceptionv4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/argparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-491">
+          <caret line="1262" column="8" lean-forward="false" selection-start-line="1262" selection-start-column="8" selection-end-line="1262" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/numpy/core/multiarray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="574" column="28" lean-forward="false" selection-start-line="574" selection-start-column="28" selection-end-line="574" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/play/foo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/play/char_draw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/play/test/char_draw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding>
+            <element signature="e#15#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prepro_feats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="58" column="55" lean-forward="false" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extract_feat.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval_s2vt.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_s2vt.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="125" column="12" lean-forward="false" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/opts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="69" column="11" lean-forward="false" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="124" column="19" lean-forward="false" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-168">
+            <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
