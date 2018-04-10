@@ -43,9 +43,8 @@ def extract_feats(params, model, load_image_fn):
     print("save video feats to %s" % (dir_fc))
     video_list = glob.glob(os.path.join(params['video_path'], '*.mp4'))
     for video in tqdm(video_list):
-        print video
         video_id = video.split("/")[-1].split(".")[0]
-        dst = params['model'] + '_' + video_id
+        dst = '/dev/shm/' + params['model'] + '_' + video_id
         extract_frames(video, dst)
 
         image_list = sorted(glob.glob(os.path.join(dst, '*.jpg')))
@@ -94,6 +93,7 @@ if __name__ == '__main__':
     elif params['model'] == 'vgg19':
         C, H, W = 3, 224, 224
         model = pretrainedmodels.vgg19(pretrained='imagenet')
+        load_image_fn = utils.LoadTransformImage(model)
     elif params['model'] == 'resnet50':
         C, H, W = 3, 224, 224
         model = pretrainedmodels.resnet50(pretrained='imagenet')
