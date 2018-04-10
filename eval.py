@@ -84,6 +84,7 @@ def main(opt):
     opt["seq_length"] = dataset.max_len
     if opt["model"] == 'S2VTModel':
         model = S2VTModel(opt["vocab_size"], opt["max_len"], opt["dim_hidden"], opt["dim_word"], opt['dim_vid'],
+                          n_layers=opt['num_layers'],
                           rnn_cell=opt['rnn_type'],
                           rnn_dropout_p=opt["rnn_dropout_p"]).cuda()
     elif opt["model"] == "S2VTAttModel":
