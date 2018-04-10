@@ -70,6 +70,8 @@ def test(model, crit, dataset, vocab, opt):
     #result = OrderedDict(result, **valid_score)
     result = OrderedDict(result.items() + valid_score.items())
     print result
+    if not os.path.exists(opt["results_path"]):
+        os.makedirs(opt["results_path"])
     with open(os.path.join(opt["results_path"], "scores.txt"), 'a') as scores_table:
         scores_table.write(json.dumps(result) + "\n")
     with open(os.path.join(opt["results_path"],

@@ -82,9 +82,13 @@ class VideoDataset(Dataset):
         fc_feat = fc_feat[samples, :]
         if self.with_c3d == 1:
             c3d_feat = np.load(os.path.join(self.c3d_feats_dir, 'video%i.npy'%(ix)))
-            fc_feat = np.concatenate((fc_feat, np.tile(c3d_feat, (fc_feat.shape[0], 1))), axis=1)
-        # print fc_feat.shape
-        label = torch.zeros(self.max_len)
+            if len(c3d_feat.shape) == 1:
+                fc_feat = np.concatenate((fc_feat, np.tile(c3d_feat, (fc_feat.shape[0], 1))), axis=1)
+            elif len(c3d_feat.shape) == 2:
+                samples = np.round(np.linspace(
+                    0, c3d_feat.shape[0] - 1, fc_feat.shape[0])).astype(np.int32)
+                fc_feat = np.concatenate((fc_feat, c3d_feat[samples, :]), axis=1)
+        # label = torch.zeros(self.max_len)
         mask = torch.zeros(self.max_len)
         captions = self.captions['video%i'%(ix)]['final_captions']
         gts = torch.zeros(len(captions), self.max_len).long()

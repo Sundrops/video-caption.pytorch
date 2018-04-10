@@ -129,8 +129,8 @@ if __name__ == '__main__':
         print key, value
     os.environ['CUDA_VISIBLE_DEVICES'] = opt["gpu"]
     opt_json = os.path.join(opt["checkpoint_path"], 'opt_info.json')
-    if not os.path.isdir(opt["checkpoint_path"]):
-        os.mkdir(opt["checkpoint_path"])
+    if not os.path.exists(opt["checkpoint_path"]):
+        os.makedirs(opt["checkpoint_path"])
     with open(opt_json, 'w') as f:
         json.dump(opt, f)
     print('save opt details to %s' % (opt_json))
