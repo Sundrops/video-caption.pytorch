@@ -9,7 +9,7 @@ checkpoint/
 *video*
 *.json
 *.ipynb
-
+.idea/
 !scripts/*.py
 
 # Byte-compiled / optimized / DLL files

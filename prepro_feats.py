@@ -44,7 +44,7 @@ def extract_feats(params, model, load_image_fn):
     video_list = glob.glob(os.path.join(params['video_path'], '*.mp4'))
     for video in tqdm(video_list):
         video_id = video.split("/")[-1].split(".")[0]
-        dst = '/dev/shm/' + params['model'] + '_' + video_id
+        dst = params['model'] + '_' + video_id
         extract_frames(video, dst)
 
         image_list = sorted(glob.glob(os.path.join(dst, '*.jpg')))
