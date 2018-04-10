@@ -16,6 +16,7 @@ def parse_opts():
     parser.add_argument('--wide_resnet_k', default=2, type=int, help='Wide resnet k')
     parser.add_argument('--resnext_cardinality', default=32, type=int, help='ResNeXt cardinality')
     parser.add_argument('--no_cuda', action='store_true', help='If true, cuda is not used.')
+    parser.add_argument('--gpu', type=str, default='0', help='gpu device number')
     parser.set_defaults(verbose=False)
     parser.add_argument('--verbose', action='store_true', help='')
     parser.set_defaults(verbose=False)

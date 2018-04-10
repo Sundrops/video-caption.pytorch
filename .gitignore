@@ -11,7 +11,7 @@ checkpoint/
 *.ipynb
 .idea/
 !scripts/*.py
-
+*.pth
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

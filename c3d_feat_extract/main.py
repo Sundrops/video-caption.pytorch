@@ -16,9 +16,17 @@ if __name__=="__main__":
     opt.mean = get_mean()
     opt.arch = '{}-{}'.format(opt.model_name, opt.model_depth)
     opt.sample_size = 112
-    opt.sample_duration = 16
-    opt.n_classes = 400
-
+    if opt.model.find('64f') != -1:
+        opt.sample_duration = 64
+    else:
+        opt.sample_duration = 16
+    if opt.model.find('hmdb51') != -1:
+        opt.n_classes = 51
+    elif opt.model.find('ucf101') != -1:
+        opt.n_classes = 101
+    else:
+        opt.n_classes = 400
+    os.environ['CUDA_VISIBLE_DEVICES'] = opt.gpu
     model = generate_model(opt)
     print('loading model {}'.format(opt.model))
     model_data = torch.load(opt.model)
