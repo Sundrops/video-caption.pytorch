@@ -1,3 +1,44 @@
+# requirements #
+
+- cuda
+- pytorch 0.3.1
+- python3(未测试) or python2(已测试,最好统一用py2吧)
+- ffmpeg (can install using anaconda)
+
+# usage #
+
+1. 2d特征提取, 如resnet101, nasnet等
+```bash
+sh ./2d_extract_feat.sh
+# model 模型选择
+# n_frame_steps 一段视频提取多少帧，默认选80吧
+```
+
+2. 3d特征提取
+```bash
+cd c3d_feat_extract
+sh ./c3d_feat_extract.sh
+# --mode feature 提取特征模式，无需改动
+# 以下根据所选模型不同进行更改
+# --model_name resnext \
+# --model_depth 101 \
+# --resnext_cardinality 32 \
+# --resnet_shortcut B \
+# --model pretrained_models/resnext-101-64f-kinetics.pth
+```
+3. 训练
+
+```bash
+./train_s2vt.sh
+# 根据相关配置进行设置，具体选项含义参考opts.py
+```
+
+4. 测试和评分
+
+```bash
+./eval_s2vt.sh
+# 根据相关配置进行设置，具体选项含义参考eval.py
+```
 # file tree #
 
 相关文件下载 
@@ -33,12 +74,6 @@ result
 
 recommend installing pytorch and python packages using Anaconda
 
-## requirements
-
-- cuda
-- pytorch 0.3.1
-- python3 or python2
-- ffmpeg (can install using anaconda)
 
 ### python packages
 
