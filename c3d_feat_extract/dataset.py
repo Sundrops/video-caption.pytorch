@@ -5,7 +5,7 @@ import os
 import math
 import functools
 import copy
-
+import numpy as np
 
 def pil_loader(path):
     # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
@@ -95,10 +95,19 @@ def make_dataset(video_path, sample_duration):
     step = sample_duration
     for i in range(1, (n_frames - sample_duration + 1), step):
         sample_i = copy.deepcopy(sample)
-        sample_i['frame_indices'] = list(range(i, i + sample_duration))
+        sample_i['frame_indices'] = list(range(i, i + sample_duration))  # [i: i + sample_duration) same as segment
         sample_i['segment'] = torch.IntTensor([i, i + sample_duration - 1])
         dataset.append(sample_i)
-
+    if n_frames % sample_duration != 0:
+        sample_i = copy.deepcopy(sample)
+        if n_frames - sample_duration + 1 >= 1:
+            sample_i['frame_indices'] = list(range(n_frames - sample_duration + 1, n_frames + 1))
+            sample_i['segment'] = torch.IntTensor([n_frames - sample_duration + 1, n_frames])
+        else:
+            sample_i['frame_indices'] = np.round(np.linspace(1, n_frames, sample_duration))\
+                .astype(np.int32).tolist()
+            sample_i['segment'] = torch.IntTensor([1, n_frames])
+        dataset.append(sample_i)
     return dataset
 
 
