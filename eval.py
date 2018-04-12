@@ -28,7 +28,7 @@ def convert_data_to_coco_scorer_format(data_frame):
 
 def test(model, crit, dataset, vocab, opt):
     model.eval()
-    loader = DataLoader(dataset, batch_size=opt["batch_size"], shuffle=True)
+    loader = DataLoader(dataset, batch_size=opt["batch_size"], shuffle=False)
     scorer = COCOScorer()
     gt_dataframe = json_normalize(
         json.load(open(opt["input_json"]))['sentences'])
@@ -84,16 +84,22 @@ def main(opt):
     dataset = VideoDataset(opt, "test")
     opt["vocab_size"] = dataset.get_vocab_size()
     opt["seq_length"] = dataset.max_len
+    if opt['beam_size'] != 1:
+        assert opt["batch_size"] == 1
     if opt["model"] == 'S2VTModel':
         model = S2VTModel(opt["vocab_size"], opt["max_len"], opt["dim_hidden"], opt["dim_word"], opt['dim_vid'],
+                          beam_size=opt['beam_size'],
                           n_layers=opt['num_layers'],
                           rnn_cell=opt['rnn_type'],
                           rnn_dropout_p=opt["rnn_dropout_p"]).cuda()
     elif opt["model"] == "S2VTAttModel":
-        encoder = EncoderRNN(opt["dim_vid"], opt["dim_hidden"], bidirectional=opt["bidirectional"],
+        encoder = EncoderRNN(opt["dim_vid"], opt["dim_hidden"],
+                             n_layers=opt['num_layers'],
+                             rnn_cell=opt['rnn_type'], bidirectional=opt["bidirectional"],
                              input_dropout_p=opt["input_dropout_p"], rnn_dropout_p=opt["rnn_dropout_p"])
         decoder = DecoderRNN(opt["vocab_size"], opt["max_len"], opt["dim_hidden"], opt["dim_word"],
-                             input_dropout_p=opt["input_dropout_p"],
+                             n_layers=opt['num_layers'],
+                             rnn_cell=opt['rnn_type'], input_dropout_p=opt["input_dropout_p"],
                              rnn_dropout_p=opt["rnn_dropout_p"], bidirectional=opt["bidirectional"])
         model = S2VTAttModel(encoder, decoder).cuda()
     model = nn.DataParallel(model)
