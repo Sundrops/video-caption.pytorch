@@ -56,7 +56,7 @@ def extract_feats(params, net):
             im = im.transpose((2, 0, 1))  # im:(c,h,w)
             im = im[np.newaxis, ...]
             ims.append(im)
-            if (index+1) % 20 == 0:
+            if (index+1) % params['batch_size'] == 0:
                 ims = np.concatenate(ims, axis=0)
                 net.blobs['data'].reshape(*ims.shape)
                 net.blobs['data'].data[...] = ims
@@ -75,6 +75,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu", dest='gpu', type=int, default=0,
                         help='Set CUDA_VISIBLE_DEVICES environment variable, optional')
+    parser.add_argument('--batch_size', type=int, default=20, help='minibatch size')
     parser.add_argument("--output_dir", dest='output_dir', type=str,
                         default='data/feats/resnet152', help='directory to store features')
     parser.add_argument("--n_frame_steps", dest='n_frame_steps', type=int, default=80,
@@ -89,6 +90,8 @@ if __name__ == '__main__':
                         help='deploy')
     args = parser.parse_args()
     params = vars(args)
+    # TODO: remove this limit
+    assert params['n_frame_steps'] % params['batch_size'] == 0, 'For simplicity, n_frame_steps%batch_size must = 0'
     caffe.set_device(params['gpu'])
     caffe.set_mode_gpu()
     model_weights = params['model_weight']
