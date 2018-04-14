@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python scene_feat_extract.py \
+python caffe_feat_extract.py \
 --video_path data/videos \
 --output_dir data/feats/resnet152_places365 \
 --model_weight pretrained_models/resnet152_places365.caffemodel \

@@ -6,6 +6,7 @@ foo/
 log/
 data/
 checkpoint/
+pretrained_models/
 *video*
 *.json
 *.ipynb
