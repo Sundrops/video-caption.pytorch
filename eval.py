@@ -91,6 +91,7 @@ def main(opt):
                           beam_size=opt['beam_size'],
                           n_layers=opt['num_layers'],
                           rnn_cell=opt['rnn_type'],
+                          bidirectional=opt["bidirectional"],
                           rnn_dropout_p=opt["rnn_dropout_p"]).cuda()
     elif opt["model"] == "S2VTAttModel":
         encoder = EncoderRNN(opt["dim_vid"], opt["dim_hidden"],
@@ -116,8 +117,7 @@ if __name__ == '__main__':
                         help='recover train opts from saved opt_json')
     parser.add_argument('--saved_model', type=str, default='',
                         help='path to saved model to evaluate')
-    parser.add_argument(
-        '--rnn_type', type=str, default='gru', help='lstm or gru')
+    # parser.add_argument('--rnn_type', type=str, default='gru', help='lstm or gru')
     parser.add_argument('--dump_json', type=int, default=1,
                         help='Dump json with predictions into vis folder? (1=yes,0=no)')
     parser.add_argument('--results_path', type=str, default='results/')

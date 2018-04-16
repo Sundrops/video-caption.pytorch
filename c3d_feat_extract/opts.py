@@ -17,6 +17,8 @@ def parse_opts():
     parser.add_argument('--resnext_cardinality', default=32, type=int, help='ResNeXt cardinality')
     parser.add_argument('--no_cuda', action='store_true', help='If true, cuda is not used.')
     parser.add_argument('--gpu', type=str, default='0', help='gpu device number')
+    parser.add_argument('--n_classes', type=int, default=400, help='numbers of video class')
+    parser.add_argument('--sample_duration', type=int, default=16, help='sample_duration')
     parser.set_defaults(verbose=False)
     parser.add_argument('--verbose', action='store_true', help='')
     parser.set_defaults(verbose=False)

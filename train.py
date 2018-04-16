@@ -87,6 +87,7 @@ def main(opt):
             opt['dim_vid'],
             rnn_cell=opt['rnn_type'],
             n_layers=opt['num_layers'],
+            bidirectional=opt["bidirectional"],
             rnn_dropout_p=opt["rnn_dropout_p"]).cuda()
     elif opt["model"] == "S2VTAttModel":
         encoder = EncoderRNN(

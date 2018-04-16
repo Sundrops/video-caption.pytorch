@@ -22,7 +22,7 @@ def parse_opt():
 
     parser.add_argument(
         '--feats_dir',
-        nargs='*',
+        nargs='+',
         type=str,
         default=['data/feats/resnet152/'],
         help='path to the directory containing the preprocessed fc feats')
