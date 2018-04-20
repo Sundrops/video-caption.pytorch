@@ -63,7 +63,7 @@ def train(loader, model, crit, optimizer, lr_scheduler, opt, rl_crit=None):
                 print("iter %d (epoch %d), avg_reward = %.6f" %
                       (iteration, epoch, np.mean(reward[:, 0])))
 
-        if epoch % opt["save_checkpoint_every"] == 0:
+        if epoch != 0 and epoch % opt["save_checkpoint_every"] == 0:
             model_path = os.path.join(opt["checkpoint_path"],
                                       'model_%d.pth' % (epoch))
             model_info_path = os.path.join(opt["checkpoint_path"],

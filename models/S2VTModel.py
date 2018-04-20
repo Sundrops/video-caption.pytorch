@@ -7,7 +7,7 @@ from torch.autograd import Variable
 
 class S2VTModel(nn.Module):
     def __init__(self, vocab_size, max_len, dim_hidden, dim_word, dim_vid=2048, sos_id=1, eos_id=0,
-                 n_layers=1, rnn_cell='gru', rnn_dropout_p=0.2, beam_size=1):
+                 n_layers=1, bidirectional=False, rnn_cell='gru', rnn_dropout_p=0.2):
         # python 3
         # super().__init__()
         super(S2VTModel, self).__init__()
@@ -15,12 +15,15 @@ class S2VTModel(nn.Module):
             self.rnn_cell = nn.LSTM
         elif rnn_cell.lower() == 'gru':
             self.rnn_cell = nn.GRU
-        self.rnn1 = self.rnn_cell(dim_vid, dim_hidden, n_layers,
+        #  hidden_size * num_directions
+        #  num_directions = 2 if bidirectional else 1
+        rnn_output_size = dim_hidden * 2 if bidirectional else dim_hidden
+
+        self.rnn1 = self.rnn_cell(dim_vid, dim_hidden, n_layers, bidirectional=bidirectional,
                                   batch_first=True, dropout=rnn_dropout_p)
-        self.rnn2 = self.rnn_cell(dim_hidden + dim_word, dim_hidden, n_layers,
+        self.rnn2 = self.rnn_cell(rnn_output_size + dim_word, dim_hidden, n_layers, bidirectional=bidirectional,
                                   batch_first=True, dropout=rnn_dropout_p)
         self.rnn_cell_type = rnn_cell.lower()
-        self.beam_size = beam_size
         self.n_layers = n_layers
         self.dim_vid = dim_vid
         self.dim_output = vocab_size
@@ -31,7 +34,7 @@ class S2VTModel(nn.Module):
         self.eos_id = eos_id
         self.embedding = nn.Embedding(self.dim_output, self.dim_word)
 
-        self.out = nn.Linear(self.dim_hidden, self.dim_output)
+        self.out = nn.Linear(rnn_output_size, self.dim_output)
 
     def forward(self, vid_feats, target_variable=None,
                 mode='train', opt={}):
@@ -64,7 +67,8 @@ class S2VTModel(nn.Module):
                 seq_probs.append(logits.unsqueeze(1))
             seq_probs = torch.cat(seq_probs, 1)
         else:
-            if self.beam_size == 1:
+            beam_size = opt.get('beam_size', 1)
+            if beam_size == 1:
                 current_words = self.embedding(Variable(torch.LongTensor([self.sos_id] * batch_size)).cuda())
                 for i in range(self.max_length - 1):
                     self.rnn1.flatten_parameters()
@@ -100,7 +104,7 @@ class S2VTModel(nn.Module):
                         # batch*voc_size
                         logits = F.log_softmax(logits, dim=1)
                         # batch*beam
-                        topk_prob, topk_word = torch.topk(logits, k=self.beam_size, dim=1)
+                        topk_prob, topk_word = torch.topk(logits, k=beam_size, dim=1)
                         # batch*beam -> beam*batch
                         topk_prob = topk_prob.permute(1, 0)
                         topk_word = topk_word.permute(1, 0)
@@ -116,7 +120,7 @@ class S2VTModel(nn.Module):
                     # sort by prob
                     current_words = sorted(current_words, reverse=False, cmp=lambda x,y:cmp(int(x[1]),int(y[1])))
                     # get the top words
-                    current_words = current_words[-self.beam_size:]
+                    current_words = current_words[-beam_size:]
                 seq_preds = torch.cat(current_words[-1][0][1:], 0).unsqueeze(0)
         return seq_probs, seq_preds
 

@@ -84,7 +84,7 @@ class DecoderRNN(nn.Module):
         sample_max = opt.get('sample_max', 1)
         beam_size = opt.get('beam_size', 1)
         temperature = opt.get('temperature', 1.0)
-
+        rnn_cell_type = opt.get('rnn_type', 'gru')
         batch_size, _, _ = encoder_outputs.size()
         decoder_hidden = self._init_rnn_state(encoder_hidden)
 
@@ -95,8 +95,10 @@ class DecoderRNN(nn.Module):
             # use targets as rnn inputs
             for i in range(self.max_length - 1):
                 current_words = self.embedding(targets[:, i])
-                
-                context = self.attention(decoder_hidden.squeeze(0), encoder_outputs)
+                if rnn_cell_type == 'lstm':
+                    context = self.attention(decoder_hidden[0].squeeze(0), encoder_outputs)
+                elif rnn_cell_type == 'gru':
+                    context = self.attention(decoder_hidden.squeeze(0), encoder_outputs)
                 decoder_input = torch.cat([current_words, context], dim=1)
                 decoder_input = self.input_dropout(decoder_input).unsqueeze(1)
                 self.rnn.flatten_parameters()
@@ -109,46 +111,84 @@ class DecoderRNN(nn.Module):
             seq_logprobs = torch.cat(seq_logprobs, 1)
 
         elif mode == 'inference':
-            if beam_size > 1:
-                return self.sample_beam(encoder_outputs, decoder_hidden, opt)
+            if beam_size == 1:
+                for t in range(self.max_length - 1):
+                    if rnn_cell_type == 'lstm':
+                        context = self.attention(decoder_hidden[0].squeeze(0), encoder_outputs)
+                    elif rnn_cell_type == 'gru':
+                        context = self.attention(decoder_hidden.squeeze(0), encoder_outputs)
 
-            for t in range(self.max_length - 1):
-                context = self.attention(
-                    decoder_hidden.squeeze(0), encoder_outputs)
+                    if t == 0:  # input <bos>
+                        it = Variable(torch.LongTensor([self.sos_id] * batch_size)).cuda()
+                    elif sample_max:
+                        sampleLogprobs, it = torch.max(logprobs, 1)
+                        seq_logprobs.append(sampleLogprobs.view(-1, 1))
+                        it = it.view(-1).long()
 
-                if t == 0:  # input <bos>
-                    it = Variable(torch.LongTensor(
-                        [self.sos_id] * batch_size)).cuda()
-                elif sample_max:
-                    sampleLogprobs, it = torch.max(logprobs, 1)
-                    seq_logprobs.append(sampleLogprobs.view(-1, 1))
-                    it = it.view(-1).long()
-
-                else:
-                    # sample according to distribuition
-                    if temperature == 1.0:
-                        prob_prev = torch.exp(logprobs)
                     else:
-                        # scale logprobs by temperature
-                        prob_prev = torch.exp(torch.div(logprobs, temperature))
-                    it = torch.multinomial(prob_prev, 1).cuda()
-                    sampleLogprobs = logprobs.gather(1, Variable(it))
-                    seq_logprobs.append(sampleLogprobs.view(-1, 1))
-                    it = it.view(-1).long()
+                        # sample according to distribuition
+                        if temperature == 1.0:
+                            prob_prev = torch.exp(logprobs)
+                        else:
+                            # scale logprobs by temperature
+                            prob_prev = torch.exp(torch.div(logprobs, temperature))
+                        it = torch.multinomial(prob_prev, 1).cuda()
+                        sampleLogprobs = logprobs.gather(1, Variable(it))
+                        seq_logprobs.append(sampleLogprobs.view(-1, 1))
+                        it = it.view(-1).long()
 
-                seq_preds.append(it.view(-1, 1))
+                    seq_preds.append(it.view(-1, 1))
 
-                xt = self.embedding(it)
-                decoder_input = torch.cat([xt, context], dim=1)
-                decoder_input = self.input_dropout(decoder_input).unsqueeze(1)
-                self.rnn.flatten_parameters()
-                decoder_output, decoder_hidden = self.rnn(
-                    decoder_input, decoder_hidden)
-                logprobs = F.log_softmax(
-                    self.out(decoder_output.squeeze(1)), dim=1)
+                    xt = self.embedding(it)
+                    decoder_input = torch.cat([xt, context], dim=1)
+                    decoder_input = self.input_dropout(decoder_input).unsqueeze(1)
+                    self.rnn.flatten_parameters()
+                    decoder_output, decoder_hidden = self.rnn(
+                        decoder_input, decoder_hidden)
+                    logprobs = F.log_softmax(
+                        self.out(decoder_output.squeeze(1)), dim=1)
 
-            seq_logprobs = torch.cat(seq_logprobs, 1)
-            seq_preds = torch.cat(seq_preds[1:], 1)
+                seq_logprobs = torch.cat(seq_logprobs, 1)
+                seq_preds = torch.cat(seq_preds[1:], 1)
+            #if beam_size > 1 and sample_max:
+            else:
+                # input <bos>
+                start = [Variable(torch.LongTensor([self.sos_id] * batch_size)).cuda()]
+                current_words = [[start, 0.0, decoder_hidden]]
+                for t in range(self.max_length - 1):
+                    temp = []
+                    for s in current_words:
+                        if rnn_cell_type == 'lstm':
+                            context = self.attention(s[2][0].squeeze(0), encoder_outputs)
+                        elif rnn_cell_type == 'gru':
+                            context = self.attention(s[2].squeeze(0), encoder_outputs)
+                        xt = self.embedding(s[0][-1])
+                        decoder_input = torch.cat([xt, context], dim=1)
+                        decoder_input = self.input_dropout(decoder_input).unsqueeze(1)
+                        self.rnn.flatten_parameters()
+                        decoder_output, s[2] = self.rnn(
+                            decoder_input, s[2])
+                        logits = F.log_softmax(
+                            self.out(decoder_output.squeeze(1)), dim=1)
+                        # batch*beam
+                        topk_prob, topk_word = torch.topk(logits, k=beam_size, dim=1)
+                        # batch*beam -> beam*batch
+                        topk_prob = topk_prob.permute(1, 0)
+                        topk_word = topk_word.permute(1, 0)
+                        # Getting the top <beam_size>(n) predictions and creating a
+                        # new list so as to put them via the model again
+                        for prob, word in zip(topk_prob, topk_word):
+                            next_cap = s[0][:]
+                            next_cap.append(word)
+                            temp.append([next_cap, s[1] + prob,
+                                         (s[2][0].clone(), s[2][1].clone()) if isinstance(s[2], tuple)
+                                         else s[2].clone()])
+                    current_words = temp
+                    # sort by prob
+                    current_words = sorted(current_words, reverse=False, cmp=lambda x, y: cmp(int(x[1]), int(y[1])))
+                    # get the top words
+                    current_words = current_words[-beam_size:]
+                seq_preds = torch.cat(current_words[-1][0][1:], 0).unsqueeze(0)
 
         return seq_logprobs, seq_preds
 

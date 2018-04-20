@@ -88,7 +88,6 @@ def main(opt):
         assert opt["batch_size"] == 1
     if opt["model"] == 'S2VTModel':
         model = S2VTModel(opt["vocab_size"], opt["max_len"], opt["dim_hidden"], opt["dim_word"], opt['dim_vid'],
-                          beam_size=opt['beam_size'],
                           n_layers=opt['num_layers'],
                           rnn_cell=opt['rnn_type'],
                           bidirectional=opt["bidirectional"],
